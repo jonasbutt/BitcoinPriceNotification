@@ -88,17 +88,17 @@
     <Compile Include="Domain\Interfaces\Smtp\ISmtpClientFactory.cs" />
     <Compile Include="Domain\Model\ExchangeRateRequest.cs" />
     <Compile Include="Domain\Model\ExchangeRateResponse.cs" />
-    <Compile Include="Services\Smtp\SmtpClientFactory.cs" />
-    <Compile Include="Services\Smtp\SmtpService.cs" />
+    <Compile Include="Helpers\SmtpClientFactory.cs" />
+    <Compile Include="Services\SmtpService.cs" />
     <Compile Include="Domain\Interfaces\ISettingsService.cs" />
-    <Compile Include="Services\Http\HttpClientFactory.cs" />
-    <Compile Include="Services\Http\HttpService.cs" />
+    <Compile Include="Helpers\HttpClientFactory.cs" />
+    <Compile Include="Services\HttpService.cs" />
     <Compile Include="Domain\Interfaces\Http\IHttpClientFactory.cs" />
     <Compile Include="Domain\Interfaces\Http\IHttpService.cs" />
     <Compile Include="Domain\Interfaces\Http\ISerializationHelper.cs" />
     <Compile Include="Services\NotificationConfigurationService.cs" />
     <Compile Include="Services\OutputService.cs" />
-    <Compile Include="Services\Http\SerializationHelper.cs" />
+    <Compile Include="Helpers\SerializationHelper.cs" />
     <Compile Include="Services\SettingsService.cs" />
   </ItemGroup>
   <ItemGroup />
