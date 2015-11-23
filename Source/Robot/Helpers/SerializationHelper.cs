@@ -1,8 +1,8 @@
-﻿using System.Reflection;
-using System.Text;
-using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Helpers;
+﻿using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Helpers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System.Reflection;
+using System.Text;
 
 namespace Jonas.BitcoinPriceNotification.Robot.Helpers
 {

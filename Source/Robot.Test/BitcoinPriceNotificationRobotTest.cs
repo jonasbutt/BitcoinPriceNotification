@@ -1,10 +1,9 @@
-using System.Threading.Tasks;
 using FakeItEasy;
 using FakeItEasy.ExtensionSyntax.Full;
-using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces;
 using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Services;
 using Jonas.BitcoinPriceNotification.Robot.Domain.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Threading.Tasks;
 
 namespace Jonas.BitcoinPriceNotification.Robot.Test
 {

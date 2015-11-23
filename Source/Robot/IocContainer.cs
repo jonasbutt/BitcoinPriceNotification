@@ -1,5 +1,4 @@
-﻿using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces;
-using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Helpers;
+﻿using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Helpers;
 using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Services;
 using Jonas.BitcoinPriceNotification.Robot.Helpers;
 using Jonas.BitcoinPriceNotification.Robot.Services;
@@ -33,6 +32,7 @@ namespace Jonas.BitcoinPriceNotification.Robot
             container.Register<ISerializationHelper, SerializationHelper>();
             container.Register<ISmtpService, SmtpService>();
             container.Register<ISmtpClientFactory, SmtpClientFactory>();
+            container.Register<ICommandLineParser, CommandLineParser>();
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces;
-using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Services;
+﻿using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Services;
 using Nito.AsyncEx;
 
 namespace Jonas.BitcoinPriceNotification.Robot
