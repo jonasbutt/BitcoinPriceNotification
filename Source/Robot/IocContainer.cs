@@ -1,6 +1,6 @@
 ﻿using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces;
-using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Http;
-using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Smtp;
+using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Helpers;
+using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Services;
 using Jonas.BitcoinPriceNotification.Robot.Helpers;
 using Jonas.BitcoinPriceNotification.Robot.Services;
 using SimpleInjector;

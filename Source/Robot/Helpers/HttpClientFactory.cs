@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
 using System.Net.Http.Headers;
-using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Http;
+using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Helpers;
 
 namespace Jonas.BitcoinPriceNotification.Robot.Helpers
 {

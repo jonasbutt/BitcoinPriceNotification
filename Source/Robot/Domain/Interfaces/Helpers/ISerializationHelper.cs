@@ -1,4 +1,4 @@
-namespace Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Http
+namespace Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Helpers
 {
     public interface ISerializationHelper
     {

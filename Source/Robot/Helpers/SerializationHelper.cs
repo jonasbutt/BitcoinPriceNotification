@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using System.Text;
-using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Http;
+using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Helpers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 

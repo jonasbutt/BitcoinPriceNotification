@@ -1,6 +1,6 @@
 ﻿using Jonas.BitcoinPriceNotification.Robot.Domain.Model;
 
-namespace Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces
+namespace Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Services
 {
     public interface INotificationConfigurationService
     {

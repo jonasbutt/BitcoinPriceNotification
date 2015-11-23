@@ -1,6 +1,7 @@
 using System.Net.Mail;
 using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces;
-using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Smtp;
+using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Helpers;
+using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Services;
 
 namespace Jonas.BitcoinPriceNotification.Robot.Helpers
 {

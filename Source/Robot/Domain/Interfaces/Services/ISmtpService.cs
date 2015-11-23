@@ -1,4 +1,4 @@
-namespace Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Smtp
+namespace Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Services
 {
     public interface ISmtpService
     {

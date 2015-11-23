@@ -1,7 +1,8 @@
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Http;
+using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Helpers;
+using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Services;
 
 namespace Jonas.BitcoinPriceNotification.Robot.Services
 {

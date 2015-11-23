@@ -1,5 +1,6 @@
 ﻿using CommandLine;
 using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces;
+using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Services;
 using Jonas.BitcoinPriceNotification.Robot.Domain.Model;
 
 namespace Jonas.BitcoinPriceNotification.Robot.Services
