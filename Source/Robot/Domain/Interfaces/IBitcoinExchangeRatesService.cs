@@ -2,7 +2,7 @@
 
 namespace Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces
 {
-    internal interface IBitcoinExchangeRatesService
+    public interface IBitcoinExchangeRatesService
     {
         Task<decimal> RetrieveBuyRateInEuro();
 

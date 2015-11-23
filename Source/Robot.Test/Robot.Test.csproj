@@ -59,10 +59,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BitcoinPriceNotificationRobotTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Robot\Robot.csproj">
+      <Project>{e5acf1a3-9cd6-4f1a-8d7e-17a0bfa0c259}</Project>
+      <Name>Robot</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

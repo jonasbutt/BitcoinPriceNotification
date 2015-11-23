@@ -20,10 +20,11 @@ namespace Jonas.BitcoinPriceNotification.Robot.Services.Http
 
         public string SerializeToJson(object data)
         {
-            return JsonConvert.SerializeObject(data, new JsonSerializerSettings
-            {
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
-            });
+            return JsonConvert.SerializeObject(data,
+                new JsonSerializerSettings
+                {
+                    ContractResolver = new CamelCasePropertyNamesContractResolver()
+                });
         }
 
         public string SerializeToQueryString(object data)

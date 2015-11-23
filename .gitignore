@@ -7,3 +7,6 @@
 /Source/Robot/obj/Debug
 /Source/Robot.Test/bin/Debug
 /Source/Robot.Test/obj/Debug
+/Source/Robot/Robot.csproj.user
+/Source/.vs/BitcoinPriceNotification/v14/.suo
+*.coverage
