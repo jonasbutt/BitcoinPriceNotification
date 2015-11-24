@@ -1,6 +1,6 @@
 namespace Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Helpers
 {
-    internal interface ICommandLineParser
+    public interface ICommandLineParser
     {
         TParseResult Parse<TParseResult>(string[] arguments) where TParseResult : class, new();
     }

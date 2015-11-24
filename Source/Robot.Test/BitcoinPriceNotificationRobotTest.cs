@@ -90,7 +90,7 @@ namespace Jonas.BitcoinPriceNotification.Robot.Test
             const double priceThreshold = 300;
             const Currency currency = Currency.Bitcoin;
             const string emailAddress = "foo@bar.com";
-            const decimal rate = 400;
+            const decimal rate = 200;
             string[] arguments = { };
             A.CallTo(() => this.notificationConfigurationService.CreateFromArguments(arguments)).Returns(
                 new NotificationConfiguration
@@ -150,7 +150,7 @@ namespace Jonas.BitcoinPriceNotification.Robot.Test
             const double priceThreshold = 300;
             const Currency currency = Currency.Bitcoin;
             const string emailAddress = "foo@bar.com";
-            const decimal rate = 200;
+            const decimal rate = 400;
             string[] arguments = { };
             A.CallTo(() => this.notificationConfigurationService.CreateFromArguments(arguments)).Returns(
                 new NotificationConfiguration

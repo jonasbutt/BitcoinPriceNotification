@@ -45,20 +45,23 @@ namespace Jonas.BitcoinPriceNotification.Robot
 
         private async Task ExecuteBuyRequest(NotificationConfiguration notificationConfiguration)
         {
+            var shouldBuy = false;
             decimal rate = 0;
             var currency = string.Empty;
             if (notificationConfiguration.Currency == Currency.Euro)
             {
-                currency = "EUR";
+                currency = "EUR for 1 BTC";
                 rate = await this.bitcoinExchangeRatesService.RetrieveBuyRateInEuro();
+                shouldBuy = rate < Convert.ToDecimal(notificationConfiguration.PriceThreshold);
             }
             else if (notificationConfiguration.Currency == Currency.Bitcoin)
             {
-                currency = "BTC";
+                currency = "BTC for 100 EUR";
                 rate = await this.bitcoinExchangeRatesService.RetrieveBuyRateInBtc();
+                shouldBuy = rate > Convert.ToDecimal(notificationConfiguration.PriceThreshold);
             }
 
-            if (rate < Convert.ToDecimal(notificationConfiguration.PriceThreshold))
+            if (shouldBuy)
             {
                 var notification = $"Buy now! Current rate is {rate} {currency}";
                 this.smtpService.SendEmail(notificationConfiguration.EmailAddress, notification);
@@ -72,20 +75,23 @@ namespace Jonas.BitcoinPriceNotification.Robot
 
         private async Task ExecuteSellRequest(NotificationConfiguration notificationConfiguration)
         {
+            var shouldSell = false;
             decimal rate = 0;
             var currency = string.Empty;
             if (notificationConfiguration.Currency == Currency.Euro)
             {
-                currency = "EUR";
+                currency = "EUR for 1 BTC";
                 rate = await this.bitcoinExchangeRatesService.RetrieveSellRateInEuro();
+                shouldSell = rate > Convert.ToDecimal(notificationConfiguration.PriceThreshold);
             }
             else if (notificationConfiguration.Currency == Currency.Bitcoin)
             {
-                currency = "BTC";
+                currency = "BTC for 100 EUR";
                 rate = await this.bitcoinExchangeRatesService.RetrieveSellRateInBtc();
+                shouldSell = rate < Convert.ToDecimal(notificationConfiguration.PriceThreshold);
             }
 
-            if (rate > Convert.ToDecimal(notificationConfiguration.PriceThreshold))
+            if (shouldSell)
             {
                 var notification = $"Sell now! Current rate is {rate} {currency}";
                 this.smtpService.SendEmail(notificationConfiguration.EmailAddress, notification);
