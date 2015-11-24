@@ -15,7 +15,8 @@ namespace Jonas.BitcoinPriceNotification.Robot.Helpers
 
         public SmtpClient CreateSmtpClient()
         {
-            return new SmtpClient(this.settingsService.GetSmtpServer());
+            var smtpServer = this.settingsService.GetSmtpServer();
+            return new SmtpClient(smtpServer);
         }
     }
 }
