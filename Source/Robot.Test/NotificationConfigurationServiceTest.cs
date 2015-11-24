@@ -1,8 +1,10 @@
 using FakeItEasy;
 using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Helpers;
 using Jonas.BitcoinPriceNotification.Robot.Domain.Interfaces.Services;
+using Jonas.BitcoinPriceNotification.Robot.Domain.Model;
 using Jonas.BitcoinPriceNotification.Robot.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Should;
 
 namespace Jonas.BitcoinPriceNotification.Robot.Test
 {
@@ -26,30 +28,59 @@ namespace Jonas.BitcoinPriceNotification.Robot.Test
         }
 
         [TestMethod]
-        public void CanTest()
+        public void CanCreateFromArguments()
         {
             // Arrange
-            const string priceType = "Buy";
-            const string priceThreshold = "300";
-            const string currency = "Euro";
+            const PriceType priceType = PriceType.Buy;
+            const double priceThreshold = 200;
+            const Currency currency = Currency.Bitcoin;
             const string emailAddress = "foo@bar.com";
-            string[] arguments =
-            {
-                "--priceType",
-                priceType,
-                "--priceThreshold",
-                priceThreshold,
-                "--currency",
-                currency,
-                "--emailAddres",
-                emailAddress
-            };
+            string[] arguments = {};
+
+            A.CallTo(() => this.commandLineParser.Parse<NotificationConfiguration>(arguments)).Returns(
+                new NotificationConfiguration
+                {
+                    PriceType = priceType,
+                    PriceThreshold = priceThreshold,
+                    Currency = currency,
+                    EmailAddress = emailAddress
+                });
 
             // Act
-            // TODO JB
+            var notification = this.notificationConfigurationService.CreateFromArguments(arguments);
 
             // Assert
-            // TODO JB
+            notification.ShouldNotEqual(NotificationConfiguration.Empty);
+            notification.PriceType.ShouldEqual(priceType);
+            notification.PriceThreshold.ShouldEqual(priceThreshold);
+            notification.Currency.ShouldEqual(currency);
+            notification.EmailAddress.ShouldEqual(emailAddress);
+        }
+
+        [TestMethod]
+        public void CanReturnEmptyNotificationConfigurationForInvalidArguments()
+        {
+            // Arrange
+            const PriceType priceType = PriceType.None; // Invalid value.
+            const double priceThreshold = 200;
+            const Currency currency = Currency.Bitcoin;
+            const string emailAddress = "foo@bar.com";
+            string[] arguments = { };
+
+            A.CallTo(() => this.commandLineParser.Parse<NotificationConfiguration>(arguments)).Returns(
+                new NotificationConfiguration
+                {
+                    PriceType = priceType,
+                    PriceThreshold = priceThreshold,
+                    Currency = currency,
+                    EmailAddress = emailAddress
+                });
+
+            // Act
+            var notification = this.notificationConfigurationService.CreateFromArguments(arguments);
+
+            // Assert
+            notification.ShouldEqual(NotificationConfiguration.Empty);
         }
     }
 }
